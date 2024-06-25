@@ -12,17 +12,6 @@ paypal
           },
         ],
       });
-
-      // When creating an order on the server:
-      //
-      // return fetch("/api/orders", {
-      //   method: "post",
-      // })
-      //   .then((response) => response.json())
-      //   .then((response) => {
-      //     console.log(response);
-      //     return response.id;
-      //   });
     },
 
     // Finalize the transaction after payer approval
