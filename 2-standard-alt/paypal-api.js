@@ -62,18 +62,3 @@ async function generateAccessToken() {
   return data.access_token;
 }
 
-export async function viewOrder(orderId) {
-  const accessToken = await generateAccessToken();
-  const url = `${base}/v2/checkout/orders/${orderId}`;
-  const response = await fetch(url, {
-    method: "get",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${accessToken}`,
-    },
-  });
-
-  // TODO: needs some error handling
-  // just return whatever the server provides
-  return response.json();
-}
