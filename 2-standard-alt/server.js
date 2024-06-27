@@ -12,19 +12,6 @@ app.post("/api/orders", async (req, res) => {
   res.json(order);
 });
 
-app.get("/api/orders/:orderId", async (req, res) => {
-  const { orderId } = req.params;
-  const data = await paypal.viewOrder(orderId);
-  res.json(data);
-});
-
-app.post("/api/orders/:orderId", async (req, res) => {
-  const { orderId } = req.params;
-  const { shippingOption } = req.body;
-  const data = await paypal.updateOrder(orderId, shippingOption);
-  res.json(data);
-});
-
 app.post("/api/orders/:orderId/capture", async (req, res) => {
   const { orderId } = req.params;
   const captureData = await paypal.capturePayment(orderId);
