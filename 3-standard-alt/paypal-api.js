@@ -1,12 +1,13 @@
+// javascript interface for performing asynchronous HTTP requests.
 import fetch from "node-fetch";
 
-// set some important variables
+// setting some important variables
 const { CLIENT_ID, APP_SECRET } = process.env;
 const base = "https://api-m.sandbox.paypal.com";
 
 // call the create order method
 export async function createOrder({ paymentSource }) {
-  const purchaseAmount = "9.99"; // TODO: pull prices from a database
+  const purchaseAmount = "9.99"; // hardcoding product price
   const accessToken = await generateAccessToken();
   const url = `${base}/v2/checkout/orders`;
   const response = await fetch(url, {
@@ -50,6 +51,8 @@ export async function capturePayment(orderId) {
 }
 
 // generate access token
+// this function retrieves an access token to authenticate API
+// requests to PayPal.
 export async function generateAccessToken() {
   const auth = Buffer.from(CLIENT_ID + ":" + APP_SECRET).toString("base64");
   const response = await fetch(`${base}/v1/oauth2/token`, {
@@ -64,6 +67,8 @@ export async function generateAccessToken() {
 }
 
 // generate client token
+// this function generates a secure client token and passes it back 
+// to the client-side for securely initiating a transaction on client-side.
 export async function generateClientToken(body) {
   const accessToken = await generateAccessToken();
   const request = {
