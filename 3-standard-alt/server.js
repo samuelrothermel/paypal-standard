@@ -11,16 +11,12 @@ app.use(express.static("public"));
 // render checkout page with client id & unique client token
 app.get("/checkout", async (req, res) => {
   const clientId = process.env.CLIENT_ID;
-  // customer id for vaulting
-  const customerId = "1234"; // hard-code for now to simplify
   const clientToken = await paypal.generateClientToken();
   res.render("checkout", { clientId, clientToken });
 });
 
 // create order
 app.post("/api/orders", async (req, res) => {
-  // customer id for vaulting
-  // const customerId = "1234"; // hard-code for now to simplify
   const { paymentSource } = req.body;
   const order = await paypal.createOrder({ paymentSource});
   console.log(order)
