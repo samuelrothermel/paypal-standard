@@ -1,2 +1,2 @@
 # paypal-standard
-Testing ground for PayPal Standard Checkout integrations.
+Testing ground for PayPal Checkout integrations.
