@@ -48,7 +48,7 @@ paypal
       // Data sent with onShippingAddressChange callback
       console.log("Data: ", JSON.stringify(data));
       // If customer's address is in the U.S., tell paypal to show below error in paypal modal
-      if (data.shippingAddress.countryCode === "US") {
+      if (data.shippingAddress.countryCode !== "US") {
         return actions.reject(data.errors.COUNTRY_ERROR);
     }
       // data.shippingAddress contains the selected shipping address
