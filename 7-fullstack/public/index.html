@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PayPal Standard Checkout Integration</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="App-body">
+      <p class="App-alert">Thank you for your order.</p>
+
+          <h2>PayPal Standard Checkout Integration</h2>
+          <p>Shipping Options</p>
+
+      <img
+        height="460"
+        class="book"
+        src="/noise_machine.jpg"
+        alt="White Noise Synthesizer(Play the sounds of your dreams)"
+      />
+      <p>Price: <span class="book-price">$10.00</span></p>
+      <form action="/checkout" method="get">
+        <button type="submit">🛒 Checkout</button>
+      </form>
+    </div>
+    <script>
+      if ((new URLSearchParams(location.search)).has("success")) {
+        document.querySelector(".App-alert").classList.add("App-alert__show");
+      }
+    </script>
+  </body>
+</html>
