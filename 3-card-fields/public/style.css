@@ -1,0 +1,12 @@
+
+  
+  .btn_pay {
+    background: black;
+    color: white;
+    width: 100%;
+    font-weight: bold;
+  }
+  
+  .btn_pay:hover {
+    background-color: #202020;
+  }
