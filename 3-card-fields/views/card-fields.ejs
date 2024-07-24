@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayPal JS SDK Advanced Integration</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://www.paypalobjects.com/webstatic/en_US/developer/docs/css/cardfields.css"
+    >
+    <script
+      src="https://www.paypal.com/sdk/js?components=buttons,card-fields&client-id=<%= clientId %>"
+      data-client-token="<%= clientToken %>"
+      data-sdk-integration-source="integrationbuilder_ac"
+    ></script>
+  </head>
+  <body>
+    <div id="paypal-button-container" class="paypal-button-container"></div>
+
+    <!-- Containers for Card Fields hosted by PayPal -->
+     <div id = "card-form" class="card_container">
+      <div id="card-name-field-container"></div>
+      <div id="card-number-field-container"></div>
+      <div id="card-expiry-field-container"></div>
+      <div id="card-cvv-field-container"></div>
+      
+        <!-- To be replaced with your own Billing Address Fields -->
+        <div>
+          <label for="card-billing-address-line-1">Billing Address</label>
+          <input
+            type="text"
+            id="card-billing-address-line-1"
+            name="card-billing-address-line-1"
+            autocomplete="off"
+            placeholder="Street Address"
+            value="2350 Petefish Dr"
+          >
+        </div>
+        <div>
+          <label for="card-billing-address-line-2">Unit #</label>
+          <input
+            type="text"
+            id="card-billing-address-line-2"
+            name="card-billing-address-line-2"
+            autocomplete="off"
+            placeholder="Unit"
+          >
+        </div>
+        <div>
+          <label for="card-billing-address-admin-area-line-1">City</label>
+          <input
+            type="text"
+            id="card-billing-address-admin-area-line-1"
+            name="card-billing-address-admin-area-line-1"
+            autocomplete="off"
+            placeholder="City"
+            value="Lawrence"
+          >
+        </div>
+        <div>
+          <label for="card-billing-address-admin-area-line-2">State</label>
+          <input
+            type="text"
+            id="card-billing-address-admin-area-line-2"
+            name="card-billing-address-admin-area-line-2"
+            autocomplete="off"
+            placeholder="State"
+            value="KS"
+          >
+        </div>
+        <div>
+          <label for="card-billing-address-postal-code"">Postal Code</label>
+          <input
+            type="text"
+            id="card-billing-address-postal-code"
+            name="card-billing-address-postal-code"
+            autocomplete="off"
+            placeholder="Postal Code"
+            value="66045"
+          >
+        </div>
+        <div>
+          <label for="card-billing-address-country-code">Country Code</label>
+          <input
+            type="text"
+            id="card-billing-address-country-code"
+            name="card-billing-address-country-code"
+            autocomplete="off"
+            placeholder="US"
+            value="US"
+          >
+        </div>
+        <br><div class="row">
+        <!-- <button value="submit" id="submit" class="btn">Pay</button> -->
+        <button id="card-field-submit-button" type="button" class="btn btn_pay">Pay now with Card</button>
+        </div>
+      <p id="result-message"></p>
+    </div>
+    <script src="app.js"></script>
+  </div>
+  </body>
+</html>
