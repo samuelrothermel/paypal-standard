@@ -1,0 +1,19 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always",
+    "source.organizeImports": "always"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "eslint.workingDirectories": [
+    { "directory": "./braintree-graphql/server/node", "changeProcessCWD": true },
+    { "directory": "./braintree-sdk/server/node", "changeProcessCWD": true },
+    { "directory": "./paypal/server/node", "changeProcessCWD": true },
+    { "directory": "./braintree-graphql/client", "changeProcessCWD": true },
+    { "directory": "./braintree-sdk/client", "changeProcessCWD": true },
+    { "directory": "./paypal/client", "changeProcessCWD": true }
+  ],
+  "prettier.configPath": "./.prettierrc"
+}

@@ -1,0 +1,7 @@
+[flake8]
+max-line-length = 88
+extend-ignore = E203, W503
+import-order-style = google
+
+# Enable specific checks
+select = B, F, E  # B is for builtins, F is for pyflakes, E is for pep8
